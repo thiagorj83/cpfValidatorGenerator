@@ -1,12 +1,12 @@
 # cpfValidatorGenerator
-Aplicativo escrito em React Native validador/gerador de números de C.P.F. .
+  Aplicativo escrito em React Native validador/gerador de números de C.P.F. .
 
 ## Introdução
 
-CpfValidatorGenerator é um pequeno projeto de aplicativo escrito em React Native que escrevi com o objetivo de praticar a criação de aplicativos em React Native e demonstrar como funciona o algoritmo de validação de um número de cadastro de pessoa física, nosso número de identificação brasileiro conhecido como c.p.f. .
+  CpfValidatorGenerator é um pequeno projeto de aplicativo escrito em React Native que escrevi com o objetivo de praticar a criação de aplicativos em React Native e demonstrar como funciona o algoritmo de validação de um número de cadastro de pessoa física, nosso número de identificação brasileiro conhecido como c.p.f. .
 Ferramentas utilizadas
-Para este projeto, desenvolvido no Windows 11,é necessário visitar a página https://reactnavigation.org/docs/getting-started/ onde há a descrição de como instalar e utilizar a biblioteca react-navigation, necessária para criar o menu de navegação do aplicativo.
-Pré-requisitos
+  Para este projeto, desenvolvido no Windows 11,é necessário visitar a página https://reactnavigation.org/docs/getting-started/ onde há a descrição de como instalar e utilizar a biblioteca react-navigation, necessária para criar o menu de navegação do aplicativo.
+#### Pré-requisitos
 •	react-native >= 0.63.0.
 
 ## Instalação
@@ -41,11 +41,11 @@ protected void onCreate(Bundle savedInstanceState) {
 Por fim, adicione o seguinte import ao arquivo:
 import android.os.Bundle;
 
-# Algoritmo de validação do número de C.P.F. 
+## O algoritmo de validação do número de C.P.F. 
 
-A classe cpfValidator possui duas função, uma chamada de allAreEqual() e isValid().
+A classe cpfValidator possui duas funções: allAreEqual() e isValid().
 
-### função isValid() . 
+### A função isValid() . 
 
     isValid(cpf) {
 
@@ -60,7 +60,7 @@ A classe cpfValidator possui duas função, uma chamada de allAreEqual() e isVal
                 }
             });
 
-A função isValid separa verifica a quantidade de caracteres através da função .length(). Se possuir onze caracteres, a função cria um array com cada caracter, evetua o parseInt() e verifica se o resultado não é um NaN (not a number). Se cada caracter for um número, é provável que o usuário forneceu um número de C.P.F. completo, sem os separadores pontos e traços.A função ‘finalArray’ recebe os inteiros.
+  A função isValid separa verifica a quantidade de caracteres através da função .length(). Se possuir onze caracteres, a função cria um array com cada caracter, evetua o parseInt() e verifica se o resultado não é um NaN (not a number). Se cada caracter for um número, é provável que o usuário forneceu um número de C.P.F. completo, sem os separadores pontos e traços.A função ‘finalArray’ recebe os inteiros.
 Após isso, a função areAllEqual() verifica se o conjunto de onze dígitos não são todos iguais entre si. Caso não sejam, a execução prossegue, senão, retorna ‘false’.
 Por outro lado, é possível que o usuário tenha digitado o número com pontos e traço.
 
@@ -72,10 +72,11 @@ else if ((cpf.length === 14) && (cpf.match("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$"
                 }
             });
         }
-Dessa forma, a função verifica, através de uma máscara com expressão regular se o que foi fornecido atende ao formato de um número de C.P.F, que é xxx.xxx.xxx-xx, ou seja, são onze dígitos. Três grupos de três dígitos separados por ponto, mais os dois últimos dígitos (dígitos verificadores) separados por traço. Neste caso, a expressão regular extrai apenas os dígitos, coloca cada caracter na array “chars”, efetua o parseInt() de cada um mais a verificação se cada um deles não é um NaN. Caso todos os onze dígitos sejam inteiros, eles são salvos na variável ‘finalArray’ e passe-se para o próximo passo.
+        
+  Dessa forma, a função verifica, através de uma máscara com expressão regular se o que foi fornecido atende ao formato de um número de C.P.F, que é xxx.xxx.xxx-xx, ou seja, são onze dígitos. Três grupos de três dígitos separados por ponto, mais os dois últimos dígitos (dígitos verificadores) separados por traço. Neste caso, a expressão regular extrai apenas os dígitos, coloca cada caracter na array “chars”, efetua o parseInt() de cada um mais a verificação se cada um deles não é um NaN. Caso todos os onze dígitos sejam inteiros, eles são salvos na variável ‘finalArray’ e passe-se para o próximo passo.
 ##Função areAllEqual
 
-O próximo passo é efetuar a execução da função areAllEqual(). Ela verifica se se todos os dígitos são iguais. O grupo ‘111.111.111.11’ ou ‘888.888.888-88’ atenderia o cálculo final que determina se dado número é um C.P.F. válido. Porém, não existem documentos desse tipo contendo todos os dígitos iguais. Logo, exclui-se essas ocorrências.
+  O próximo passo é efetuar a execução da função areAllEqual(). Ela verifica se se todos os dígitos são iguais. O grupo ‘111.111.111.11’ ou ‘888.888.888-88’ atenderia o cálculo final que determina se dado número é um C.P.F. válido. Porém, não existem documentos desse tipo contendo todos os dígitos iguais. Logo, exclui-se essas ocorrências.
    
    allAreEqual(array) {
         this.array = array
