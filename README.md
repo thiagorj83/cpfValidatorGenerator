@@ -106,7 +106,7 @@ possui o valor ***‘false’***. Isso permite o próximo passo que é a verific
 ### Primeiro dígito verificador
 
   Multiplica-se cada um dos nove primeiros números contidos em ***'finalArray’*** pelos contidos em ***‘aux_array1’***, na ordem de ocorrência, ou seja, 
-*‘finalArray[0]* *** *aux_array1[0]’*, *‘finalArray[1]* *** *aux_array1[1]’*, e assim por diante, somando todos os produtos. A variável ***‘sum1’*** recebe a soma.
+***‘finalArray[0] \* aux_array1[0]’***, ***‘finalArray[1] \* aux_array1[1]’***, e assim por diante, somando todos os produtos. A variável ***‘sum1’*** recebe a soma.
 Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-25**.
 
 
