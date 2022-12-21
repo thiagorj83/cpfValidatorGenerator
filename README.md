@@ -11,39 +11,41 @@ Ferramentas utilizadas
 
 ## Instalação
 
-Para exemplificar a criação da pasta de projeto, utilizarei o nome “app-react-native”.
+  Para exemplificar a criação da pasta de projeto, utilizarei o nome “app-react-native”.
 No prompt de comando ou no Windows powershell, digite:
 
-C:\> react-native init app-react-native
+C:\> react-native init app-react-native    
 
-Com este comando, a pasta do projeto será criada com a maior parte dos arquivos necessário ao desenvolvimento do aplicativo.
+  Com este comando, a pasta do projeto será criada com a maior parte dos arquivos necessário ao desenvolvimento do aplicativo.
 Após isso, é necessário instalar os pacotes requeridos no projeto, via NPM ou YARN, conforme indicado pela página react navigation. 
 
-C:\> npm install @react-navigation/native
+C:\> npm install @react-navigation/native     
 
-Após isso, instale também:
+  Após isso, instale também:     
 
-C:\>  npm install react-native-screens react-native-safe-area-context
+C:\>  npm install react-native-screens react-native-safe-area-context      
 
-Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:
+Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:      
 
-C:\>  @react-navigation/bottom-tabs 
-C:\>  react-native-vector-icons/Ionicons	
+C:\>  @react-navigation/bottom-tabs       
+C:\>  react-native-vector-icons/Ionicons	       
 
-O pacote react-native-screens package requer uma configuração adicional para funcionar apropriadamente em dispositivos Android.Abra e edite o arquivo ‘MainActivity.java, localizado na pasta android/app/src/main/java/app-react-native/MainActivity.java.
-Adicione o seguinte trecho de código ao corpo da classe MainActivity:
+  O pacote react-native-screens package requer uma configuração adicional para funcionar apropriadamente em dispositivos Android.Abra e edite o arquivo ‘MainActivity.java, localizado na pasta android/app/src/main/java/app-react-native/MainActivity.java.
+
+  Adicione o seguinte trecho de código ao corpo da classe MainActivity:
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
 }
 
-Por fim, adicione o seguinte import ao arquivo:
-import android.os.Bundle;
+  Por fim, adicione o seguinte import ao arquivo:
+
+import android.os.Bundle;      
 
 ## O algoritmo de validação do número de C.P.F. 
 
-A classe cpfValidator possui duas funções: allAreEqual() e isValid().
+  A classe cpfValidator possui duas funções: allAreEqual() e isValid().
 
 ### A função isValid() . 
 
@@ -91,12 +93,12 @@ else if ((cpf.length === 14) && (cpf.match("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$"
 
 ### Cálculo dos dígitos verificadores	
 
-Agora,partindo do ponto em que há onze caracteres na variável *‘finalArray’* que se forem convertidos para o tipo int são numéricos, a variável *‘invalid’*
-possui o valor ‘false’. Isso permite o próximo passo que é a verificação dos dígitos verificadores. 
-Para a verificação do primeiro dígito verificador, efetua-se a criação da variável *‘aux_array1’* com os valores **[10,9,8,7,6,5,4,3,2]**. 
+  Agora, partindo do ponto em que há onze caracteres na variável *‘finalArray’* que se forem convertidos para o tipo int são numéricos, a variável *‘invalid’*
+possui o valor *‘false’*. Isso permite o próximo passo que é a verificação dos dígitos verificadores. 
+  Para a verificação do primeiro dígito verificador, efetua-se a criação da variável *‘aux_array1’* com os valores **[10,9,8,7,6,5,4,3,2]**. 
 
-Multiplica-se cada um dos nove primeiros números contidos em f’inalArray’ pelos contidos em ‘aux_array1’, na ordem de ocorrência, ou seja, 
-*‘finalArray[0] * aux_array1[0]’*, ‘ finalArray[1] * aux_array1[1]’, e assim por diante, somando todos os produtos. A variável ‘sum1’ recebe a soma.
+  Multiplica-se cada um dos nove primeiros números contidos em 'finalArray’ pelos contidos em ***‘aux_array1’***, na ordem de ocorrência, ou seja, 
+*‘finalArray[0]* *** *aux_array1[0]’*, *‘finalArray[1]* *** *aux_array1[1]’*, e assim por diante, somando todos os produtos. A variável *‘sum1’* recebe a soma.
 Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-25**.
 
 
@@ -107,16 +109,16 @@ Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-2
 | =  | =  | = | =  | =  | =  | = | =  | = |
 | 30 | 63 | 8 | 28 | 42 | 30 | 8 | 18 | 2 |
 
-A variável ‘expected_digit1’ representará o valor esperado para o primeiro dígito verificador do suposto C.P.F. . Seu cálculo se dá por:
+  A variável ***‘expected_digit1’*** representará o valor esperado para o primeiro dígito verificador do suposto **C.P.F.** . Seu cálculo se dá por:
 
-30+63+8+28+42+30+8+18+2=229
+***30+63+8+28+42+30+8+18+2=229***
 
-‘expected_digit1’=229 *10 mod 11
+***‘expected_digit1’=229 *10 mod 11***
 
-‘expected_digit1’= 2
+***‘expected_digit1’= 2***
 
 
-Para o cálculo do segundo dígito verificador, procede-se da seguinte maneira:
+  Para o cálculo do segundo dígito verificador, procede-se da seguinte maneira:
 
 | 11 | 10 | 9  | 8  | 7  | 6  | 5  | 4  | 3  | 2 |
 |----|----|----|--- |----|----|----|--- |----|---|
@@ -125,12 +127,12 @@ Para o cálculo do segundo dígito verificador, procede-se da seguinte maneira:
 | =  | =  | =  | =  | =  | =  | =  | =  | =  | = |
 | 33 | 70 | 9  | 32 | 49 | 36 | 10 | 24 | 3  | 4 |
 
-‘expected_digit2’=(33+70+9+32+49+36+10+24+3+4) * 10 mod 11
-‘expected_digit2’ =270 * 10 mod 11
-‘expected_digit2’= 5
+***‘expected_digit2’=(33+70+9+32+49+36+10+24+3+4) * 10 mod 11***
+***‘expected_digit2’ =270 * 10 mod 11***
+***‘expected_digit2’= 5***
 
-Dessa forma, o validador constatou que os dois dígitos verificadores estão corretos, e correspondem a 25, exatamente
-como os fornecidos pelo número fictício ***371.476.261-25*** .
+  Dessa forma, o validador constatou que os dois dígitos verificadores estão corretos, e correspondem a 25, exatamente
+como os fornecidos pelo número fictício ***371.476.261-25*** .Logo, o número fictício é um ***C.P.F***. válido.
 
 
 
