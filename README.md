@@ -106,6 +106,37 @@ Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-2
 | =  | =  | = | =  | =  | =  | = | =  | = |
 | 30 | 63 | 8 | 28 | 42 | 30 | 8 | 18 | 2 |
 
+A variável ‘expected_digit1’ representará o valor esperado para o primeiro dígito verificador do suposto C.P.F. . Seu cálculo se dá por:
+
+30+63+8+28+42+30+8+18+2=229
+
+‘expected_digit1’=229 *10 mod 11
+
+‘expected_digit1’= 2
+
+Para o cálculo do segundo dígito verificador, procede-se da seguinte maneira:
+
+| 11 | 10 | 9  | 8  | 7  | 6  | 5  | 4  | 3  | 2 |
+|----|----|----|--- |----|----|----|--- |----|---|
+| *  | *  | *  | *  | *  | *  | *  | *  | *  | * |
+| 3  | 7  | 1  | 4  | 7  | 6  | 2  | 6  | 1  | 2 |
+| =  | =  | =  | =  | =  | =  | =  | =  | =  | = |
+| 33 | 70 | 9  | 32 | 49 | 36 | 10 | 24 | 3  | 4 |
+
+‘expected_digit2’=(33+70+9+32+49+36+10+24+3+4) * 10 mod 11
+‘expected_digit2’ =270 * 10 mod 11
+‘expected_digit2’= 5
+
+Dessa forma, o validador constatou que os dois dígitos verificadores estão corretos, e correspondem a 25, exatamente
+como os fornecidos pelo número fictício ***371.476.261-25*** .
+
+
+
+
+
+
+
+
 
 
 
