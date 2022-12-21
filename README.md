@@ -14,16 +14,16 @@ Ferramentas utilizadas
   Para exemplificar a criação da pasta de projeto, utilizarei o nome “app-react-native”.
 No prompt de comando ou no Windows powershell, digite:
 
-C:\> react-native init app-react-native    
+*C:\> react-native init app-react-native    
 
   Com este comando, a pasta do projeto será criada com a maior parte dos arquivos necessário ao desenvolvimento do aplicativo.
 Após isso, é necessário instalar os pacotes requeridos no projeto, via NPM ou YARN, conforme indicado pela página react navigation. 
 
-C:\> npm install @react-navigation/native     
+*C:\> npm install @react-navigation/native     
 
   Após isso, instale também:     
 
-C:\>  npm install react-native-screens react-native-safe-area-context      
+*C:\>  npm install react-native-screens react-native-safe-area-context      
 
 Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:      
 
@@ -62,19 +62,20 @@ import android.os.Bundle;
                 }
             });
 
-  A função isValid separa verifica a quantidade de caracteres através da função .length(). Se possuir onze caracteres, a função cria um array com cada caracter, evetua o parseInt() e verifica se o resultado não é um NaN (not a number). Se cada caracter for um número, é provável que o usuário forneceu um número de C.P.F. completo, sem os separadores pontos e traços.A função ‘finalArray’ recebe os inteiros.
-Após isso, a função areAllEqual() verifica se o conjunto de onze dígitos não são todos iguais entre si. Caso não sejam, a execução prossegue, senão, retorna ‘false’.
+  A função isValid separa verifica a quantidade de caracteres através da função .length(). Se possuir onze caracteres, a função cria um array com cada caracter, evetua o parseInt() e verifica se o resultado não é um NaN (not a number). Se cada caracter for um número, é provável que o usuário forneceu um número de ***C.P.F.*** completo, sem os separadores pontos e traços.A função ‘finalArray’ recebe os inteiros.
+Após isso, a função ***areAllEqual()*** verifica se o conjunto de onze dígitos não são todos iguais entre si. Caso não sejam, a execução prossegue, senão, retorna ***‘false’***.
 Por outro lado, é possível que o usuário tenha digitado o número com pontos e traço.
 
-else if ((cpf.length === 14) && (cpf.match("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$"))) {
-            chars = this.cpf.split('')
-            chars.forEach((item, index, arr) => {
-                if (!isNaN(parseInt(item))) {
-                    finalArray.push(item)
-                }
-            });
-        }
-        
+
+    else if ((cpf.length === 14) && (cpf.match("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$"))) {
+                chars = this.cpf.split('')
+                chars.forEach((item, index, arr) => {
+                    if (!isNaN(parseInt(item))) {
+                        finalArray.push(item)
+                    }
+                });
+            }
+
   Dessa forma, a função verifica, através de uma máscara com expressão regular se o que foi fornecido atende ao formato de um número de C.P.F, que é xxx.xxx.xxx-xx, ou seja, são onze dígitos. Três grupos de três dígitos separados por ponto, mais os dois últimos dígitos (dígitos verificadores) separados por traço. Neste caso, a expressão regular extrai apenas os dígitos, coloca cada caracter na array “chars”, efetua o parseInt() de cada um mais a verificação se cada um deles não é um NaN. Caso todos os onze dígitos sejam inteiros, eles são salvos na variável ‘finalArray’ e passe-se para o próximo passo.
 ##Função areAllEqual
 
