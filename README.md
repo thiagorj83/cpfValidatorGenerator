@@ -77,28 +77,34 @@ Por outro lado, é possível que o usuário tenha digitado o número com pontos 
             }
 
   Dessa forma, a função verifica, através de uma máscara com expressão regular se o que foi fornecido atende ao formato de um número de C.P.F, que é xxx.xxx.xxx-xx, ou seja, são onze dígitos. Três grupos de três dígitos separados por ponto, mais os dois últimos dígitos (dígitos verificadores) separados por traço. Neste caso, a expressão regular extrai apenas os dígitos, coloca cada caracter na array “chars”, efetua o parseInt() de cada um mais a verificação se cada um deles não é um NaN. Caso todos os onze dígitos sejam inteiros, eles são salvos na variável ‘finalArray’ e passe-se para o próximo passo.
-##Função areAllEqual
+  
+## Função areAllEqual
 
-  O próximo passo é efetuar a execução da função areAllEqual(). Ela verifica se se todos os dígitos são iguais. O grupo ‘111.111.111.11’ ou ‘888.888.888-88’ atenderia o cálculo final que determina se dado número é um C.P.F. válido. Porém, não existem documentos desse tipo contendo todos os dígitos iguais. Logo, exclui-se essas ocorrências.
-   
-   allAreEqual(array) {
-        this.array = array
-        const result = array.every(element => {
-            if (element === array[0]) {
-                return true;
-            }
-        });
+     allAreEqual(array) {
+          this.array = array
+          const result = array.every(element => {
+              if (element === array[0]) {
+                  return true;
+              }
+          });
 
-        return result;
-    }
+          return result;
+      }
+      
+      
+  O próximo passo é efetuar a execução da função areAllEqual(). Ela verifica se se todos os dígitos são iguais. O grupo ‘111.111.111.11’ ou ‘888.888.888-88’ atenderia o cálculo final que determina se dado número é um ***C.P.F.*** válido. Porém, não existem documentos desse tipo contendo todos os dígitos iguais. Logo, exclui-se essas ocorrências.
+
 
 ### Cálculo dos dígitos verificadores	
 
-  Agora, partindo do ponto em que há onze caracteres na variável *‘finalArray’* que se forem convertidos para o tipo int são numéricos, a variável *‘invalid’*
+  Agora, partindo do ponto em que há onze caracteres na variável ***‘finalArray’*** que se forem convertidos para o tipo int são numéricos, a variável *‘invalid’*
 possui o valor *‘false’*. Isso permite o próximo passo que é a verificação dos dígitos verificadores. 
+
   Para a verificação do primeiro dígito verificador, efetua-se a criação da variável *‘aux_array1’* com os valores **[10,9,8,7,6,5,4,3,2]**. 
 
-  Multiplica-se cada um dos nove primeiros números contidos em 'finalArray’ pelos contidos em ***‘aux_array1’***, na ordem de ocorrência, ou seja, 
+### Primeiro dígito verificador
+
+  Multiplica-se cada um dos nove primeiros números contidos em ***'finalArray’*** pelos contidos em ***‘aux_array1’***, na ordem de ocorrência, ou seja, 
 *‘finalArray[0]* *** *aux_array1[0]’*, *‘finalArray[1]* *** *aux_array1[1]’*, e assim por diante, somando todos os produtos. A variável *‘sum1’* recebe a soma.
 Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-25**.
 
@@ -118,6 +124,7 @@ Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-2
 
 ***‘expected_digit1’= 2***
 
+### Segundo dígito verificador 
 
   Para o cálculo do segundo dígito verificador, procede-se da seguinte maneira:
 
@@ -134,6 +141,29 @@ Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-2
 
   Dessa forma, o validador constatou que os dois dígitos verificadores estão corretos, e correspondem a 25, exatamente
 como os fornecidos pelo número fictício ***371.476.261-25*** .Logo, o número fictício é um ***C.P.F***. válido.
+
+## Função genFakeCpf()
+
+    function genFakeCpf() {
+        f1=new cpfValidator()
+        let isFakeCpfValid = 'Inválido!'
+        let fakeCpf = 0
+
+        while (isFakeCpfValid === 'Inválido!') {
+
+            fakeCpf = parseInt(Math.random() * (99999999999 - 11111111111))
+            isFakeCpfValid = f1.isValid(fakeCpf.toString())
+        }
+
+        return fakeCpf
+    }
+
+
+A função ***genFakeCpf*** gera um número inteiro de onze dígitos.
+Ela faz a chamada da função isValid() da classe cpfValidator para verificar se o número pseudo aleatório é um ***C.P.F.*** válido.
+Caso o número não seja válido, a função continua o **looping condicional while** até que o número atenda aos requisitos.
+
+
 
 
 
