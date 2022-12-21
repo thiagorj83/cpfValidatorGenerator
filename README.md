@@ -25,7 +25,7 @@ Após isso, instale também:
 
 C:\>  npm install react-native-screens react-native-safe-area-context
 
-Neste projeto, o tipo de navegação/menu escolhido foi o “tab navigation”, que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:
+Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:
 
 C:\>  @react-navigation/bottom-tabs 
 C:\>  react-native-vector-icons/Ionicons	
@@ -99,11 +99,12 @@ Multiplica-se cada um dos nove primeiros números contidos em f’inalArray’ p
 Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-25**.
 
 
-10|9|8|7|6|5|4|3|2
-*|*|*|*|*|*|*|*|*
-3|7|1||4|7|6|2|6|1
-=|=|=|=|=|=|=|=|=
-30|63|8|28|42|30|8|18|2
+10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+*  | * | * | * | * | * | * | * | *
+3  | 7 | 1 | | 4 | 7 | 6 | 2 | 6 | 1
+=  | = | = | = | = | = | = | = | =
+30 | 63 | 8 | 28 | 42 | 30 | 8 | 18 | 2
 
 
 
