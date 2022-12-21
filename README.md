@@ -135,9 +135,9 @@ Para efeito didático, utilizaremos o seguinte número fictício **371.476.261-2
 | =  | =  | =  | =  | =  | =  | =  | =  | =  | = |
 | 33 | 70 | 9  | 32 | 49 | 36 | 10 | 24 | 3  | 4 |
 
-***‘expected_digit2’=(33+70+9+32+49+36+10+24+3+4) * 10 mod 11***
-***‘expected_digit2’ =270 * 10 mod 11***
-***‘expected_digit2’= 5***
+***‘expected_digit2’=(33+70+9+32+49+36+10+24+3+4) * 10 mod 11***        
+***‘expected_digit2’ =270 * 10 mod 11***           
+***‘expected_digit2’= 5***         
 
   Dessa forma, o validador constatou que os dois dígitos verificadores estão corretos, e correspondem a 25, exatamente
 como os fornecidos pelo número fictício ***371.476.261-25*** .Logo, o número fictício é um ***C.P.F***. válido.
