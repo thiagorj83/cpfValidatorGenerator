@@ -32,7 +32,7 @@ Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que 
 
   O pacote react-native-screens package requer uma configuração adicional para funcionar apropriadamente em dispositivos Android.Abra e edite o arquivo ‘MainActivity.java, localizado na pasta android/app/src/main/java/app-react-native/MainActivity.java.          
 
-  Adicione o seguinte trecho de código ao corpo da classe MainActivity:       
+ Adicione o seguinte trecho de código ao corpo da classe MainActivity:       
 
       @Override
       protected void onCreate(Bundle savedInstanceState) {
