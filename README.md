@@ -1,7 +1,7 @@
 # cpfValidatorGenerator
 Aplicativo escrito em React Native validador/gerador de números de C.P.F. .
 
-# Introdução
+## Introdução
 
 CpfValidatorGenerator é um pequeno projeto de aplicativo escrito em React Native que escrevi com o objetivo de praticar a criação de aplicativos em React Native e demonstrar como funciona o algoritmo de validação de um número de cadastro de pessoa física, nosso número de identificação brasileiro conhecido como c.p.f. .
 Ferramentas utilizadas
@@ -9,7 +9,7 @@ Para este projeto, desenvolvido no Windows 11,é necessário visitar a página h
 Pré-requisitos
 •	react-native >= 0.63.0.
 
-# Instalação
+## Instalação
 
 Para exemplificar a criação da pasta de projeto, utilizarei o nome “app-react-native”.
 No prompt de comando ou no Windows powershell, digite:
@@ -45,7 +45,7 @@ import android.os.Bundle;
 
 A classe cpfValidator possui duas função, uma chamada de allAreEqual() e isValid().
 
-## função isValid() . 
+### função isValid() . 
 
     isValid(cpf) {
 
@@ -88,7 +88,7 @@ O próximo passo é efetuar a execução da função areAllEqual(). Ela verifica
         return result;
     }
 
-## Cálculo dos dígitos verificadores	
+### Cálculo dos dígitos verificadores	
 
 Agora,partindo do ponto em que há onze caracteres na variável *‘finalArray’* que se forem convertidos para o tipo int são numéricos, a variável *‘invalid’*
 possui o valor ‘false’. Isso permite o próximo passo que é a verificação dos dígitos verificadores. 
