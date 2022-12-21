@@ -17,29 +17,29 @@ No prompt de comando ou no Windows powershell, digite:
 * C:\> react-native init app-react-native    
 
   Com este comando, a pasta do projeto será criada com a maior parte dos arquivos necessário ao desenvolvimento do aplicativo.
-Após isso, é necessário instalar os pacotes requeridos no projeto, via NPM ou YARN, conforme indicado pela página react navigation. 
+Após isso, é necessário instalar os pacotes requeridos no projeto, via NPM ou YARN, conforme indicado pela página react navigation.       
 
 * C:\> npm install @react-navigation/native     
 
-  Após isso, instale também:     
+  Após isso, instale também:         
 
 * C:\>  npm install react-native-screens react-native-safe-area-context      
 
-Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:      
+Neste projeto, o tipo de navegação/menu escolhido foi o 'tab navigation', que oferece a navegação por abas dipostas na parte inferior da tela. Para tal, instale as duas bibliotecas abaixo:             
 
 * C:\>  @react-navigation/bottom-tabs       
-* C:\>  react-native-vector-icons/Ionicons	       
+* C:\>  react-native-vector-icons/Ionicons	          
 
-  O pacote react-native-screens package requer uma configuração adicional para funcionar apropriadamente em dispositivos Android.Abra e edite o arquivo ‘MainActivity.java, localizado na pasta android/app/src/main/java/app-react-native/MainActivity.java.
+  O pacote react-native-screens package requer uma configuração adicional para funcionar apropriadamente em dispositivos Android.Abra e edite o arquivo ‘MainActivity.java, localizado na pasta android/app/src/main/java/app-react-native/MainActivity.java.          
 
-  Adicione o seguinte trecho de código ao corpo da classe MainActivity:
+  Adicione o seguinte trecho de código ao corpo da classe MainActivity:       
 
       @Override
       protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(null);
       }
 
-  Por fim, adicione o seguinte import ao arquivo:
+  Por fim, adicione o seguinte import ao arquivo:           
 
 * import android.os.Bundle;      
 
